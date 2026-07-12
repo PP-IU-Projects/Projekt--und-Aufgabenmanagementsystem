@@ -153,3 +153,33 @@ Klassendiagramm
 
           User * <-------> * Project
                   Mitglied
+                  
+            Einfaches Entity-Relationship-Diagramm (ERD)
+  +------------+        +------------------+        +------------+
+  |   USERS    |        | PROJECT_MEMBERS  |        |  PROJECT   |
+  +------------+        +------------------+        +------------+
+  | PK id      |<------>| FK user_id       |<------>| PK id      |
+  | username   |        | FK project_id    |        | name       |
+  | email      |        +------------------+        | description|
+  | password   |                                  | archived   |
+  | role       |                                  +------------+
+  +------------+                                         |
+                                                         |
+                                                         | 1:n
+                                                         |
+                                                  +-------------+
+                                                  |    TASKS    |
+                                                  +-------------+
+                                                  | PK id       |
+                                                  | title       |
+                                                  | description |
+                                                  | status      |
+                                                  | FK project  |
+                                                  | FK assignee |
+                                                  +-------------+
+                                                         |
+                                                         |
+                                                         v
+                                                   +------------+
+                                                   |   USERS    |
+                                                   +------------+
