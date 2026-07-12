@@ -1,2 +1,79 @@
 # Projekt--und-Aufgabenmanagementsystem
 Webbasierte Anwendung zur Verwaltung von Projekten, Aufgaben und Mitarbeitenden in einem IT-Dienstleistungsunternehmen.
+Die Anwendung wurde als Full-Stack-Webanwendung mit React und Spring Boot entwickelt und bietet eine rollenbasierte Benutzerverwaltung,
+sowie eine sichere Authentifizierung über JSON Web Tokens (JWT).
+
+Für das Starten der Anwendung
+
+Backend (Spring Boot):
+
+Start über Eclipse mit Run As → Spring Boot App
+
+Danach im Browser unter http://localhost:5173 erreichbar, in der fertigen Version ist die Seite durch Spring Sec. geschützt und nicht mehr einsehbar.
+
+Frontend 
+
+Eingabeaufforderung starten:
+
+Falls du noch nicht im Frontend-Ordner bist wechsele mit cd auf den Frontend Ordner und bestätige.
+
+Danach npm run dev eingeben. und ausführen.
+
+Danach ist das Frontend unter http://localhost:5173/ erreichbar.
+
+
+Verwendete Technologien
+
+Frontend
+React
+React Router
+Axios
+Material UI (MUI)
+JavaScript
+HTML5
+CSS3
+Node.js
+npm
+Vite
+
+Backend
+Java
+Spring Boot
+Spring Security
+JSON Web Token (JWT)
+Spring Data JPA (Hibernate)
+REST API
+Maven
+
+Datenbank
+PostgreSQL
+Architektur
+Layered Architecture
+REST-Schnittstellen
+JSON
+DTO (Data Transfer Objects)
+
+Mapper
+CRUD-Operationen
+Rollenbasierte Zugriffskontrolle (Role-Based Access Control)
+
+
+Entwicklungswerkzeuge
+Eclipse IDE
+Visual Studio Code
+Git
+GitHub
+
+Funktionen
+Benutzerverwaltung (CRUD)
+Projektverwaltung (CRUD)
+Aufgabenverwaltung (CRUD)
+Benutzer Projekten zuweisen
+Aufgaben Projekten und Benutzern zuweisen
+Projektfortschritt mit Fortschrittsanzeige
+Login mit JWT-Authentifizierung
+Rollenbasierte Autorisierung (Administrator / Benutzer)
+Eingabevalidierung
+Sichere REST-Kommunikation zwischen Frontend und Backend
+
+
