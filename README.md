@@ -3,6 +3,7 @@ Webbasierte Anwendung zur Verwaltung von Projekten, Aufgaben und Mitarbeitenden 
 Die Anwendung wurde als Full-Stack-Webanwendung mit React und Spring Boot entwickelt und bietet eine rollenbasierte Benutzerverwaltung,
 sowie eine sichere Authentifizierung über JSON Web Tokens (JWT).
 
+
 Für das Starten der Anwendung
 
 Backend (Spring Boot):
@@ -10,6 +11,7 @@ Backend (Spring Boot):
 Start über Eclipse mit Run As → Spring Boot App
 
 Danach im Browser unter http://localhost:5173 erreichbar, in der fertigen Version ist die Seite durch Spring Sec. geschützt und nicht mehr einsehbar.
+
 
 Frontend 
 
@@ -20,6 +22,7 @@ Falls du noch nicht im Frontend-Ordner bist wechsele mit cd auf den Frontend Ord
 Danach npm run dev eingeben und ausführen.
 
 Danach ist das Frontend unter http://localhost:5173/ erreichbar.
+
 
 
 Verwendete Technologien
@@ -76,4 +79,109 @@ Rollenbasierte Autorisierung (Administrator / Benutzer)
 Eingabevalidierung
 Sichere REST-Kommunikation zwischen Frontend und Backend
 
+Architektur
 
+                   +-------------------------+
+                   |        Benutzer         |
+                   +-----------+-------------+
+                               |
+                               | HTTP
+                               v
++----------------------------------------------------------+
+|                    React Frontend                        |
+|----------------------------------------------------------|
+| Dashboard | Login | Users | Projects | Tasks | Sidebar   |
+| React Router | Axios | Material UI                   |
++-------------------------+-------------------------------+
+                          |
+                          | REST / JSON
+                          v
++----------------------------------------------------------+
+|               Spring Boot Backend                        |
+|----------------------------------------------------------|
+| Controller                                                |
+| Service                                                   |
+| DTO / Mapper                                              |
+| Spring Security + JWT                                     |
+| Repository (Spring Data JPA)                              |
++-------------------------+-------------------------------+
+                          |
+                          | JPA / Hibernate
+                          v
++----------------------------------------------------------+
+|                    PostgreSQL                            |
+|----------------------------------------------------------|
+| users | project | tasks | project_members               |
++----------------------------------------------------------+
+
+
+Klassendiagramm
+                 +------------------+
+                 |       User       |
+                 +------------------+
+                 | id               |
+                 | username         |
+                 | email            |
+                 | password         |
+                 | role             |
+                 +------------------+
+                         |
+                    0..* |  Mitglied
+                         |
+                         | *..0
+                 +------------------+
+                 |     Project      |
+                 +------------------+
+                 | id               |
+                 | name             |
+                 | description      |
+                 | archived         |
+                 +------------------+
+                         |
+                     1   | enthält
+                         |
+                         | 0..*
+                 +------------------+
+                 |       Task       |
+                 +------------------+
+                 | id               |
+                 | title            |
+                 | description      |
+                 | status           |
+                 +------------------+
+                         ^
+                         |
+                     1   | bearbeitet
+                         |
+                     0..*
+                       User
+
+Entity-Relationship-Diagramm (ERD)
++------------+        +------------------+        +------------+
+|   USERS    |        | PROJECT_MEMBERS  |        |  PROJECT   |
++------------+        +------------------+        +------------+
+| PK id      |<------>| FK user_id       |<------>| PK id      |
+| username   |        | FK project_id    |        | name       |
+| email      |        +------------------+        | description|
+| password   |                                  | archived   |
+| role       |                                  +------------+
++------------+                                         |
+                                                       |
+                                                       | 1:n
+                                                       |
+                                                +-------------+
+                                                |    TASKS    |
+                                                +-------------+
+                                                | PK id       |
+                                                | title       |
+                                                | description |
+                                                | status      |
+                                                | FK project  |
+                                                | FK assignee |
+                                                +-------------+
+                                                       |
+                                                       |
+                                                       v
+                                                 +------------+
+                                                 |   USERS    |
+                                                 +------------+
