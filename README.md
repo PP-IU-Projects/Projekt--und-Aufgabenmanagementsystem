@@ -115,45 +115,13 @@ Architektur
 +----------------------------------------------------------+
 
 Klassendiagramm
-                 +------------------+
-                 |       User       |
-                 +------------------+
-                 | id               |
-                 | username         |
-                 | email            |
-                 | password         |
-                 | role             |
-                 +------------------+
-                         |
-                    0..* |  Mitglied
-                         |
-                         | *..0
-                 +------------------+
-                 |     Project      |
-                 +------------------+
-                 | id               |
-                 | name             |
-                 | description      |
-                 | archived         |
-                 +------------------+
-                         |
-                     1   | enthält
-                         |
-                         | 0..*
-                 +------------------+
-                 |       Task       |
-                 +------------------+
-                 | id               |
-                 | title            |
-                 | description      |
-                 | status           |
-                 +------------------+
-                         ^
-                         |
-                     1   | bearbeitet
-                         |
-                     0..*
-                       User
+              ```mermaid
+classDiagram
+class User
+class Project
+class Task
 
-
-.
+User "*" -- "*" Project : Mitglied
+Project "1" -- "*" Task : enthält
+User "1" -- "*" Task : bearbeitet
+```
