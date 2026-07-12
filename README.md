@@ -117,39 +117,39 @@ Architektur
 Klassendiagramm
 
               +----------------+
-|      User      |
-+----------------+
-| id             |
-| username       |
-| email          |
-| password       |
-| role           |
-+----------------+
-        ▲
-        │ bearbeitet
-        │ 1
-        │
-        │ *
-+----------------+
-|      Task      |
-+----------------+
-| id             |
-| title          |
-| description    |
-| status         |
-+----------------+
-        ▲
-        │ gehört zu
-        │ *
-        │ 1
-+----------------+
-|    Project     |
-+----------------+
-| id             |
-| name           |
-| description    |
-| archived       |
-+----------------+
+              |      User      |
+              +----------------+
+              | id             |
+              | username       |
+              | email          |
+              | password       |
+              | role           |
+              +----------------+
+                      ▲
+                      │ bearbeitet
+                      │ 1
+                      │
+                      │ *
+              +----------------+
+              |      Task      |
+              +----------------+
+              | id             |
+              | title          |
+              | description    |
+              | status         |
+              +----------------+
+                      ▲
+                      │ gehört zu
+                      │ *
+                      │ 1
+              +----------------+
+              |    Project     |
+              +----------------+
+              | id             |
+              | name           |
+              | description    |
+              | archived       |
+              +----------------+
 
-User * <-------> * Project
-      Mitglied
+          User * <-------> * Project
+                  Mitglied
