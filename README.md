@@ -114,6 +114,44 @@ Architektur
 | users | project | tasks | project_members               |
 +----------------------------------------------------------+
 
-
-
+Klassendiagramm
+                 +------------------+
+                 |       User       |
+                 +------------------+
+                 | id               |
+                 | username         |
+                 | email            |
+                 | password         |
+                 | role             |
+                 +------------------+
+                         |
+                    0..* |  Mitglied
+                         |
+                         | *..0
+                 +------------------+
+                 |     Project      |
+                 +------------------+
+                 | id               |
+                 | name             |
+                 | description      |
+                 | archived         |
+                 +------------------+
+                         |
+                     1   | enthält
+                         |
+                         | 0..*
+                 +------------------+
+                 |       Task       |
+                 +------------------+
+                 | id               |
+                 | title            |
+                 | description      |
+                 | status           |
+                 +------------------+
+                         ^
+                         |
+                     1   | bearbeitet
+                         |
+                     0..*
+                       User
 
