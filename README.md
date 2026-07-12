@@ -17,7 +17,7 @@ Eingabeaufforderung starten:
 
 Falls du noch nicht im Frontend-Ordner bist wechsele mit cd auf den Frontend Ordner und bestätige.
 
-Danach npm run dev eingeben. und ausführen.
+Danach npm run dev eingeben und ausführen.
 
 Danach ist das Frontend unter http://localhost:5173/ erreichbar.
 
