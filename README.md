@@ -157,6 +157,7 @@ Klassendiagramm
                        User
 
 Entity-Relationship-Diagramm (ERD)
+
 +------------+        +------------------+        +------------+
 |   USERS    |        | PROJECT_MEMBERS  |        |  PROJECT   |
 +------------+        +------------------+        +------------+
