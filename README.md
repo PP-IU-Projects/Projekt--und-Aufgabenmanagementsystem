@@ -153,8 +153,9 @@ Klassendiagramm
 
           User * <-------> * Project
                   Mitglied
+
                   
-            Einfaches Entity-Relationship-Diagramm (ERD)
+                 Entity-Relationship-Diagramm (ERD)
             
         +------------+        +------------------+        +------------+
         |   USERS    |        | PROJECT_MEMBERS  |        |  PROJECT   |
