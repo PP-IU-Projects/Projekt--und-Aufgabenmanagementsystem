@@ -23,7 +23,7 @@ Danach npm run dev eingeben und ausführen.
 
 Danach ist das Frontend unter http://localhost:5173/ erreichbar.
 
-
+Für das Anlegen eines neuen Benutzers muss neben Namen, E-Mail und Rolle, ein Passwort mit mindestens 8 Buchstaben benutzt werden.
 
 Verwendete Technologien
 
